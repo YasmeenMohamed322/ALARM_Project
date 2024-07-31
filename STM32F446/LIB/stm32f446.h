@@ -93,10 +93,19 @@ typedef enum
 }APB2_Peripheral_t;
 
 
-
-
+//Peripherals base address
 #define RCC_BASE_ADDRESS				0x40023800
 
+#define GPIOA_BASE_ADDRESS              0x40020000
+#define GPIOB_BASE_ADDRESS              0x40020400
+#define GPIOC_BASE_ADDRESS              0x40020800
+#define GPIOD_BASE_ADDRESS              0x40020C00
+#define GPIOE_BASE_ADDRESS              0x40021000
+#define GPIOF_BASE_ADDRESS              0x40021400
+#define GPIOG_BASE_ADDRESS              0x40021800
+#define GPIOH_BASE_ADDRESS              0x40021C00
+
+//RCC register definition
 typedef struct
 {
 	u32 RCC_CR;
@@ -141,7 +150,28 @@ typedef struct
 
 #define RCC								((RCC_TypeDef_t *)RCC_BASE_ADDRESS)
 
+//GPIO register Definition
+typedef struct {
+	volatile u32 GPIO_MODER;
+	volatile u32 GPIO_OTYPER;
+	volatile u32 GPIO_OSPEEDER;
+	volatile u32 GPIO_PUPDR;
+	volatile u32 GPIO_IDR;
+	volatile u32 GPIO_ODR;
+	volatile u32 GPIO_BSRR;
+	volatile u32 GPIO_LCKR;
+	volatile u32 GPIO_AFRL;
+	volatile u32 GPIO_AFRH;
+}GPIOx_REG_t;
 
+#define GPIOA                             ((GPIOx_REG_t*)GPIOA_BASE_ADDRESS)
+#define GPIOB                             ((GPIOx_REG_t*)GPIOB_BASE_ADDRESS)
+#define GPIOC                             ((GPIOx_REG_t*)GPIOC_BASE_ADDRESS)
+#define GPIOD                             ((GPIOx_REG_t*)GPIOD_BASE_ADDRESS)
+#define GPIOE                             ((GPIOx_REG_t*)GPIOE_BASE_ADDRESS)
+#define GPIOF                             ((GPIOx_REG_t*)GPIOF_BASE_ADDRESS)
+#define GPIOG                             ((GPIOx_REG_t*)GPIOG_BASE_ADDRESS)
+#define GPIOH                             ((GPIOx_REG_t*)GPIOH_BASE_ADDRESS)
 
 #define MASK_BIT						1
 

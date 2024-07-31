@@ -4,9 +4,9 @@
  *  Created on: Mar 6, 2024
  *      Author: user
  */
-#include "../LIB/stdTypes.h"
-#include "../LIB/errorStates.h"
-#include "../LIB/stm32f103.h"
+#include "../../../LIB/stdTypes.h"
+#include "../../../LIB/errorStates.h"
+#include "../../../LIB/stm32f103.h"
 
 #include "../Inc/GPIO_Int.h"
 #include "../Inc/GPIO_Priv.h"
@@ -88,7 +88,7 @@ ES_t GPIO_enuTogglePinValue(Port_t Port,Pin_t Pin)
 	{
 		if(Pin >= PIN0 && Pin <= PIN15)
 		{
-			GPIO_PORT[Port]->GPIO_ODR ^= (0b1111 << Pin);
+			GPIO_PORT[Port]->GPIO_ODR ^= (1 << Pin);
 		}
 		else
 		{
