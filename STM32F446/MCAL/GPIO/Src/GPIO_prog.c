@@ -5,9 +5,9 @@
  *      Author: user
  */
 
-#include "../../../LIB/stdTypes.h"
-#include "../../../LIB/errorStates.h"
-#include "../../../LIB/stm32f446.h"
+#include "../LIB/stdTypes.h"
+#include "../LIB/errorStates.h"
+#include "../LIB/stm32f446.h"
 
 #include "../Inc/GPIO_priv.h"
 #include "../Inc/GPIO_int.h"
@@ -59,12 +59,12 @@ ES_t GPIO_enuSetPinValue(Port_t Port,Pin_t Pin,PinValue_t PinValue)
 {
 	ES_t Local_enuErrorStates = ES_NOK;
 
-	if(PinConfig->Port >= GPIO_PORTA && PinConfig->Port <= GPIO_PORTH )
+	if(Port >= GPIO_PORTA && Port <= GPIO_PORTH )
 	{
-		if(PinConfig->PinNum >= GPIO_PIN0 && PinConfig->PinNum <= GPIO_PIN15 )
+		if(Pin >= GPIO_PIN0 && Pin <= GPIO_PIN15 )
 		{
-			GPIO_PORT[PinConfig->Port]-> GPIO_ODR &= ~(ODR_BIT_MASK << Pin );
-			GPIO_PORT[PinConfig->Port]-> GPIO_ODR |= ( PinValue <<  Pin );
+			GPIO_PORT[Port]-> GPIO_ODR &= ~(ODR_BIT_MASK << Pin );
+			GPIO_PORT[Port]-> GPIO_ODR |= ( PinValue <<  Pin );
 		}
 		else
 		{
@@ -81,11 +81,11 @@ ES_t GPIO_enuTogglePinValue(Port_t Port,Pin_t Pin)
 {
 	ES_t Local_enuErrorStates = ES_NOK;
 
-	if(PinConfig->Port >= GPIO_PORTA && PinConfig->Port <= GPIO_PORTH )
+	if(Port >= GPIO_PORTA && Port <= GPIO_PORTH )
 	{
-		if(PinConfig->PinNum >= GPIO_PIN0 && PinConfig->PinNum <= GPIO_PIN15 )
+		if(Pin >= GPIO_PIN0 && Pin <= GPIO_PIN15 )
 		{
-			GPIO_PORT[PinConfig->Port]-> GPIO_ODR ^= ( PinValue <<  Pin );
+			GPIO_PORT[Port]-> GPIO_ODR ^= ( ODR_BIT_MASK <<  Pin );
 		}
 		else
 		{
@@ -105,9 +105,9 @@ ES_t GPIO_enuReadPinValue(Port_t Port,Pin_t Pin,PinValue_t* PinValue)
 
 	if(PinValue != NULL)
 	{
-		if(PinConfig->Port >= GPIO_PORTA && PinConfig->Port <= GPIO_PORTH )
+		if(Port >= GPIO_PORTA && Port <= GPIO_PORTH )
 		{
-			if(PinConfig->PinNum >= GPIO_PIN0 && PinConfig->PinNum <= GPIO_PIN15 )
+			if(Pin >= GPIO_PIN0 && Pin <= GPIO_PIN15 )
 			{
 				*PinValue = ( (GPIO_PORT[Port]->GPIO_IDR) >> Pin ) & IDR_BIT_MASK;
 			}
