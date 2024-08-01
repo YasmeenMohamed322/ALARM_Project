@@ -8,7 +8,7 @@ ES_t Buzzer_enuInit(Port_t port,Pin_t pin)
 {
 	ES_t Local_enuErrorState = ES_NOK;
 
-	PinConfig_t Led_Pin = {
+	PinConfig_t Buz_Pin = {
 			.Port = port,
 			.PinNum = pin,
 			.PinDirection = OUTPUT,
