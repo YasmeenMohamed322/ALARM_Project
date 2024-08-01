@@ -47,8 +47,9 @@
 //APB1 peripherals base address
 
 //RCC Register Definition Structure
-typedef struct{
-volatile u32  RCC_CR;
+typedef struct
+{
+volatile u32 RCC_CR;
 volatile u32 RCC_CFGR;
 volatile u32 RCC_CIR;
 volatile u32 RCC_APB2RSTR;
@@ -60,7 +61,8 @@ volatile u32 RCC_BDCR;
 volatile u32 RCC_CSR;
 }RCC_REG;
 
-RCC_REG * RCC = (RCC_REG*)(RCC_BASE_ADDRESS);
+#define RCC         ((RCC_REG*)RCC_BASE_ADDRESS)
+
 
 //GPIO Register Definition Structure
 typedef struct{
@@ -245,19 +247,21 @@ typedef struct{
 #define ENABLE             0
 
 
+
 //NVIC Registers Definition Structure
-typedef struct{
-	volatile u32 NVIC_ISER[7];
-	volatile u32 RES1[25];
-	volatile u32 NVIC_ICER[7];
-	volatile u32 RES2[25];
-	volatile u32 NVIC_ISPR[7];
-	volatile u32 RES3[25];
-	volatile u32 NVIC_ICPR[7];
-	volatile u32 RES4[25];
-	volatile u32 NVIC_IABR[7];
-	volatile u32 RES5[57];
-	volatile u32 NVIC_IPR[17];
+typedef struct
+{
+	volatile u32 NVIC_ISER[8];
+	volatile u32 RES1[24];
+	volatile u32 NVIC_ICER[8];
+	volatile u32 RES2[24];
+	volatile u32 NVIC_ISPR[8];
+	volatile u32 RES3[24];
+	volatile u32 NVIC_ICPR[8];
+	volatile u32 RES4[24];
+	volatile u32 NVIC_IABR[8];
+	volatile u32 RES5[56];
+	volatile u8  NVIC_IPR[240];
 
 }NVIC_REG;
 
