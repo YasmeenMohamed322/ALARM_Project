@@ -7,11 +7,13 @@
 /***********************************************************/
 /***********************************************************/
 
-#include "../Inc/STD_TYPES.h"
-#include "../Inc/ERROR_STATE.h"
-#include "../Inc/BIT_MATH.h"
 
-#include "../Inc/STM32F103xx.h"
+#include "../../../LIB/stdTypes.h"
+#include "../../../LIB/errorStates.h"
+#include "../../../LIB/BIT_MATH.h"
+
+#include "../../../LIB/stm32f103.h"
+
 #include "../Inc/NVIC_Interface.h"
 #include "../Inc/NVIC_Private.h"
 
