@@ -12,7 +12,8 @@
 #include "../Inc/GPIO_priv.h"
 #include "../Inc/GPIO_int.h"
 
-GPIOx_REG_t* GPIO_PORT[GPIO_NUMBER] = {GPIOA,GPIOB,GPIOC,GPIOD,GPIOE,GPIOF,GPIOG,GPIOH};
+GPIOx_REG_t* GPIO_PORT[GPIO_NUMBER] = {GPIO_PORT_A , GPIO_PORT_B , GPIO_PORT_C , GPIO_PORT_D ,
+		                               GPIO_PORT_E , GPIO_PORT_F , GPIO_PORT_G , GPIO_PORT_H};
 
 ES_t GPIO_enuInit(const PinConfig_t* PinConfig)
 {

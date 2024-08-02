@@ -5,10 +5,10 @@
  *      Author: Mostafa Edrees
  */
 
-#include "../../LIB/errorStates.h"
-#include "../../LIB/stdTypes.h"
+#include "../../../LIB/errorStates.h"
+#include "../../../LIB/stdTypes.h"
 
-#include "../../LIB/stm32f446.h"
+#include "../../../LIB/stm32f446.h"
 
 #include "../Inc/STM32F446RE_RCC_priv.h"
 #include "../Inc/STM32F446RE_RCC_int.h"

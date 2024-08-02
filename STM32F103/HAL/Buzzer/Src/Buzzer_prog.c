@@ -8,7 +8,8 @@ ES_t Buzzer_enuInit(Port_t port,Pin_t pin)
 {
 	ES_t Local_enuErrorState = ES_NOK;
 
-	PinConfig_t Buz_Pin = {
+	PinConfig_t Buz_Pin =
+	{
 			.Port = port,
 			.PinNum = pin,
 			.PinDirection = OUTPUT,
@@ -16,7 +17,7 @@ ES_t Buzzer_enuInit(Port_t port,Pin_t pin)
 			.OUTConfig = PUSH_PULL,
 	};
 
-	GPIO_enuInit(&Led_Pin);
+	GPIO_enuInit(&Buz_Pin);
 
 	return Local_enuErrorState;
 }

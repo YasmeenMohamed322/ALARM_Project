@@ -8,7 +8,7 @@
 #ifndef RCC_STM32F446RE_RCC_INT_H_
 #define RCC_STM32F446RE_RCC_INT_H_
 
-#include "../../LIB/errorStates.h"
+//#include "../../LIB/errorStates.h"
 
 typedef enum
 {
