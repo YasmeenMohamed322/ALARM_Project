@@ -23,8 +23,8 @@
 /*********** Global Variables         ******************/
 /*******************************************************/
 
-u32 Global_u32BaseCounter;
-f32 Global_f32OVF_Time;
+u32 Global_u32BaseCounter ;
+f32 Global_f32OVF_Time = 1;
 
 /********************************************************/
 /*********** Call_Back Functions          ***************/

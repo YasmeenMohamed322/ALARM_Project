@@ -34,6 +34,7 @@
 
 
 
+
 /******************************************************************************************/
 /*                          NVIC Peripheral Base Addresses                                 */
 /******************************************************************************************/
@@ -197,44 +198,44 @@
 
 typedef struct
 {
-	u32 RCC_CR;
-	u32 RCC_PLLCFGR;
-	u32 RCC_CFGR;
-	u32 RCC_CIR;
-	u32 RCC_AHB1RSTR;
-	u32 RCC_AHB2RSTR;
-	u32 RCC_AHB3RSTR;
-	u32 RCC_RESERVED1;
-	u32 RCC_APB1RSTR;
-	u32 RCC_APB2RSTR;
-	u32 RCC_RESERVED2;
-	u32 RCC_RESERVED3;
-	u32 RCC_AHB1ENR;
-	u32 RCC_AHB2ENR;
-	u32 RCC_AHB3ENR;
-	u32 RCC_RESERVED4;
-	u32 RCC_APB1ENR;
-	u32 RCC_APB2ENR;
-	u32 RCC_RESERVED5;
-	u32 RCC_RESERVED6;
-	u32 RCC_AHB1LPENR;
-	u32 RCC_AHB2LPENR;
-	u32 RCC_AHB3LPENR;
-	u32 RCC_RESERVED7;
-	u32 RCC_APB1LPENR;
-	u32 RCC_APB2LPENR;
-	u32 RCC_RESERVED8;
-	u32 RCC_RESERVED9;
-	u32 RCC_BDCR;
-	u32 RCC_CSR;
-	u32 RCC_RESERVED10;
-	u32 RCC_RESERVED11;
-	u32 RCC_SSCGR;
-	u32 RCC_PLLI2SCFGR;
-	u32 RCC_PLLSAICFGR;
-	u32 RCC_DCKCFGR;
-	u32 RCC_CKGATENR;
-	u32 RCC_DCKCFGR2;
+	volatile u32 RCC_CR;
+	volatile u32 RCC_PLLCFGR;
+	volatile u32 RCC_CFGR;
+	volatile u32 RCC_CIR;
+	volatile u32 RCC_AHB1RSTR;
+	volatile u32 RCC_AHB2RSTR;
+	volatile u32 RCC_AHB3RSTR;
+	volatile u32 RCC_RESERVED1;
+	volatile u32 RCC_APB1RSTR;
+	volatile u32 RCC_APB2RSTR;
+	volatile u32 RCC_RESERVED2;
+	volatile u32 RCC_RESERVED3;
+	volatile u32 RCC_AHB1ENR;
+	volatile u32 RCC_AHB2ENR;
+	volatile u32 RCC_AHB3ENR;
+	volatile u32 RCC_RESERVED4;
+	volatile u32 RCC_APB1ENR;
+	volatile u32 RCC_APB2ENR;
+	volatile u32 RCC_RESERVED5;
+	volatile u32 RCC_RESERVED6;
+	volatile u32 RCC_AHB1LPENR;
+	volatile u32 RCC_AHB2LPENR;
+	volatile u32 RCC_AHB3LPENR;
+	volatile u32 RCC_RESERVED7;
+	volatile u32 RCC_APB1LPENR;
+	volatile u32 RCC_APB2LPENR;
+	volatile u32 RCC_RESERVED8;
+	volatile u32 RCC_RESERVED9;
+	volatile u32 RCC_BDCR;
+	volatile u32 RCC_CSR;
+	volatile u32 RCC_RESERVED10;
+	volatile u32 RCC_RESERVED11;
+	volatile u32 RCC_SSCGR;
+	volatile u32 RCC_PLLI2SCFGR;
+	volatile u32 RCC_PLLSAICFGR;
+	volatile u32 RCC_DCKCFGR;
+	volatile u32 RCC_CKGATENR;
+	volatile u32 RCC_DCKCFGR2;
 }RCC_TypeDef_t;
 
 
@@ -276,21 +277,39 @@ typedef struct
 
 
 /******************************************************************************************/
+/*                          SYSCFG Register Definitions Structure                         */
+/******************************************************************************************/
+
+typedef struct
+{
+	volatile u32  SYSCFG_MEMRMP;    /*SYSCFG memory remap register */
+	volatile u32  SYSCFG_PMC;       /*SYSCFG peripheral mode configuration register*/
+	volatile u32  SYSCFG_EXTICR[4]; /*SYSCFG external interrupt configuration registers*/
+	volatile u32  Reserved1[2];
+	volatile u32  SYSCFG_CMPCR;     /*Compensation cell control register*/
+	volatile u32  Reserved2[2];
+	volatile u32  SYSCFG_CFGR;      /*SYSCFG configuration register*/
+}SYSCFG_RegDef_t;
+
+
+
+
+/******************************************************************************************/
 /*                          GPIO Register Definitions Structure                           */
 /******************************************************************************************/
 
 typedef struct
 {
-	volatile u32 GPIO_MODER;
-	volatile u32 GPIO_OTYPER;
-	volatile u32 GPIO_OSPEEDER;
-	volatile u32 GPIO_PUPDR;
-	volatile u32 GPIO_IDR;
-	volatile u32 GPIO_ODR;
-	volatile u32 GPIO_BSRR;
-	volatile u32 GPIO_LCKR;
-	volatile u32 GPIO_AFRL;
-	volatile u32 GPIO_AFRH;
+	volatile u32  GPIO_MODER;
+	volatile u32  GPIO_OTYPER;
+	volatile u32  GPIO_OSPEEDER;
+	volatile u32  GPIO_PUPDR;
+	volatile u32  GPIO_IDR;
+	volatile u32  GPIO_ODR;
+	volatile u32  GPIO_BSRR;
+	volatile u32  GPIO_LCKR;
+	volatile u32  GPIO_AFRL;
+	volatile u32  GPIO_AFRH;
 }GPIOx_REG_t;
 
 
@@ -350,6 +369,14 @@ typedef struct
 /******************************************************************************************/
 
 #define     SYSTICK         ((SYSTICK_RegDef_t*)SYSTICK_u32_BASE_ADDRESS)
+
+
+
+/******************************************************************************************/
+/*                          Macros Definitions for SYSTICK                                */
+/******************************************************************************************/
+
+#define     SYS_CFG          ((SYSCFG_RegDef_t*)SYSCFG_u32_BASE_ADDRESS)
 
 
 

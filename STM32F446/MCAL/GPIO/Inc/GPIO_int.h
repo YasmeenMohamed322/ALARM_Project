@@ -10,7 +10,7 @@
 
 //GPIO ports
 typedef enum{
-	GPIO_PORTA,
+	GPIO_PORTA ,
 	GPIO_PORTB ,
 	GPIO_PORTC ,
 	GPIO_PORTD ,
@@ -18,7 +18,7 @@ typedef enum{
 	GPIO_PORTF ,
 	GPIO_PORTG ,
 	GPIO_PORTH
-}Port_t;
+}GPIO_Port_t;
 
 //GPIO Pins
 typedef enum{
@@ -64,7 +64,7 @@ typedef enum{
 }PinValue_t;
 
 typedef struct{
-	Port_t Port;
+	GPIO_Port_t Port;
 	Pin_t PinNum;
 	IO_DirectionMode_t IODirection;
 	Pullup_down_Config_t Pullup_downConfig;
@@ -72,8 +72,8 @@ typedef struct{
 }PinConfig_t;
 
 ES_t GPIO_enuInit(const PinConfig_t* PinConfig);
-ES_t GPIO_enuSetPinValue(Port_t Port,Pin_t Pin,PinValue_t PinValue);
-ES_t GPIO_enuTogglePinValue(Port_t Port,Pin_t Pin);
-ES_t GPIO_enuReadPinValue(Port_t Port,Pin_t Pin,PinValue_t* PinValue);
+ES_t GPIO_enuSetPinValue(GPIO_Port_t Port,Pin_t Pin,PinValue_t PinValue);
+ES_t GPIO_enuTogglePinValue(GPIO_Port_t Port,Pin_t Pin);
+ES_t GPIO_enuReadPinValue(GPIO_Port_t Port,Pin_t Pin,PinValue_t* PinValue);
 
 #endif /* GPIO_INT_H_ */

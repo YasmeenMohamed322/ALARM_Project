@@ -56,7 +56,7 @@ ES_t GPIO_enuInit(const PinConfig_t* PinConfig)
 
 	return Local_enuErrorStates;
 }
-ES_t GPIO_enuSetPinValue(Port_t Port,Pin_t Pin,PinValue_t PinValue)
+ES_t GPIO_enuSetPinValue(GPIO_Port_t Port,Pin_t Pin,PinValue_t PinValue)
 {
 	ES_t Local_enuErrorStates = ES_NOK;
 
@@ -78,7 +78,7 @@ ES_t GPIO_enuSetPinValue(Port_t Port,Pin_t Pin,PinValue_t PinValue)
 	}
 	return Local_enuErrorStates;
 }
-ES_t GPIO_enuTogglePinValue(Port_t Port,Pin_t Pin)
+ES_t GPIO_enuTogglePinValue(GPIO_Port_t Port,Pin_t Pin)
 {
 	ES_t Local_enuErrorStates = ES_NOK;
 
@@ -100,7 +100,7 @@ ES_t GPIO_enuTogglePinValue(Port_t Port,Pin_t Pin)
 
 	return Local_enuErrorStates;
 }
-ES_t GPIO_enuReadPinValue(Port_t Port,Pin_t Pin,PinValue_t* PinValue)
+ES_t GPIO_enuReadPinValue(GPIO_Port_t Port,Pin_t Pin,PinValue_t* PinValue)
 {
 	ES_t Local_enuErrorStates = ES_NOK;
 
