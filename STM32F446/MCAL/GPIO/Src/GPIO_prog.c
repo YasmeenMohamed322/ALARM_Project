@@ -5,9 +5,9 @@
  *      Author: user
  */
 
-#include "../LIB/stdTypes.h"
-#include "../LIB/errorStates.h"
-#include "../LIB/stm32f446.h"
+#include "../../../LIB/stdTypes.h"
+#include "../../../LIB/errorStates.h"
+#include "../../../LIB/stm32f446.h"
 
 #include "../Inc/GPIO_priv.h"
 #include "../Inc/GPIO_int.h"
