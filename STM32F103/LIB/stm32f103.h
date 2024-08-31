@@ -30,7 +30,16 @@
 #define ADC3_BASE_ADDRESS                      0x40013C00UL
 #define USART1_BASE_ADDRESS                    0x40013800UL
 #define TIM8_BASE_ADDRESS                      0x40013400UL
-#define SPI1_BASE_ADDRESS                      0x40013000UL
+
+/******************************************************************************************/
+/*                          SPI Peripheral Base Addresses                                 */
+/******************************************************************************************/
+
+#define SPI1_u32_BASE_ADDRESS                  0x40013000U
+#define SPI2_u32_BASE_ADDRESS                  0x40003800U
+
+
+
 #define TIM1_BASE_ADDRESS                      0x40012C00UL
 #define ADC2_BASE_ADDRESS                      0x40012800UL
 #define ADC1_BASE_ADDRESS                      0x40012400UL
@@ -288,6 +297,34 @@ typedef struct{
 #define SCB_BASE_ADDRESS                       0xE000E008UL
 #define SCB                                   ((SCB_REG*)SCB_BASE_ADDRESS)
 
+
+
+
+/******************************************************************************************/
+/*                          SPI Register Definitions Structure                          */
+/******************************************************************************************/
+
+typedef struct
+{
+	volatile u32  SPI_CR1              ;   /*SPI control register 1 [not used in I2S mode]*/
+	volatile u32  SPI_CR2              ;   /*SPI control register 2*/
+	volatile u32  SPI_SR               ;   /*SPI status register*/
+	volatile u32  SPI_DR               ;   /*SPI data register*/
+	volatile u32  SPI_CRCPR            ;   /*SPI CRC polynomial register [not used in I2S Mode]*/
+	volatile u32  SPI_RXCRCR           ;   /*SPI RX CRC register [not used in I2S mode]*/
+	volatile u32  SPI_TXCRCR           ;   /*SPI TX CRC register [not used in I2S mode]*/
+	volatile u32  SPI_I2SCFGR          ;   /*SPI_I2S configuration register*/
+	volatile u32  SPI_I2SPR            ;   /*SPI_I2S prescaler register*/
+}SPI_RegDef_t;
+
+
+
+/******************************************************************************************/
+/*                          Macros Definitions for SPI                                    */
+/******************************************************************************************/
+
+#define     SPI_1           ((SPI_RegDef_t*)SPI1_u32_BASE_ADDRESS)
+#define     SPI_2           ((SPI_RegDef_t*)SPI2_u32_BASE_ADDRESS)
 
 
 
